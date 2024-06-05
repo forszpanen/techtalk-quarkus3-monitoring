@@ -1,0 +1,30 @@
+# Global Prometheus config.
+global:
+  scrape_interval:      1s
+  # evaluation_interval:  15s
+  # scrape_timeout:       10s
+
+# Alertmanager configuration
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          # - alertmanager:9093
+
+# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
+rule_files:
+# - "first_rules.yml"
+# - "second_rules.yml"
+
+# A scrape configuration containing exactly one endpoint to scrape: Our demo app.
+scrape_configs:
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: 'prometheus'
+    metrics_path: '/q/metrics'
+    static_configs:
+      - targets: ['172.17.0.1:8080']
+# README!
+# wsl2+docker engine - run it to get host ip - ip route show | grep -i docker0 | awk '{print $NF}'
+# e.g. C:\Windows\System32\drivers\etc\hosts - 172.17.0.1 host.win.docker.internal 
+# try with ip e.g. 172.17.0.1:8080 or with DNS name e.g. host.win.docker.internal
+# https://stackoverflow.com/questions/24319662/from-inside-of-a-docker-container-how-do-i-connect-to-the-localhost-of-the-mach

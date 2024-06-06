@@ -43,7 +43,6 @@ public class ExampleResource {
                 LOG.infof("Added odd number: {}", number);
             } catch (NoSuchElementException nse) {
                 LOG.errorf("Number: {} not found in a list", number);
-
                 number = 0;
             }
         }

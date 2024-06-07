@@ -1,4 +1,9 @@
 # Quarkus3 Monitoring
+<div align="left">
+      <a href="https://youtu.be/fsav8gDlkyo?si=rk5ZZDazh44qDqZA">
+         <img src="https://img.youtube.com/vi/fsav8gDlkyo/0.jpg" style="width:100%;">
+      </a>
+</div>
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework. The monitoring concept for Quarkus3 utilizes:
 * `quarkus-logging-gelf` for sending logs to Kibana
